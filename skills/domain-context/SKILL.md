@@ -4,7 +4,7 @@ license: MIT
 compatibility: Works with any AI coding assistant that supports the Agent Skills specification (e.g. Claude Code, Cursor, Windsurf, Copilot, and others). No system packages or network access required.
 metadata:
   author: ryan-price
-  version: "1.2"
+  version: "1.3"
 description: >
   Progressive Domain Crystallization (PDC) — a skill for building and maintaining a living
   domain knowledge base for any custom business application. Use this skill whenever the user
@@ -107,8 +107,10 @@ Domain knowledge files grow over time. A single DOMAIN.md that works well at 80 
 
 **Tier 1 — Core (root DOMAIN.md, always loaded):**
 - `## Project Overview` — what it is, who uses it, business goal (5 lines)
+- `## Domain Boundaries` — what's in scope, what's supporting, what's explicitly excluded. Prevents overbuilding.
 - `## Terminology Glossary` — the shorthand table
 - `## Entity Registry` — **names and one-liner descriptions only** (not full attribute lists, not lifecycle details, not notes). Think of this as a table of contents for the entities.
+- `## State Models` — named enumerations and valid state transitions for entities with statuses or lifecycle stages. The AI must treat these as the only valid values.
 - `## Business Rules` — the hard rules table (BR-001, BR-002, etc.). These are ground truth the AI must always know.
 - `## User Roles` — the roles table
 - `## Open Questions` — current unresolved items
@@ -191,8 +193,10 @@ The file uses these top-level sections, all in one file:
 | Section | Tier | Purpose |
 |---|---|---|
 | `## Project Overview` | 1 | What the app does, who uses it, primary goals |
+| `## Domain Boundaries` | 1 | What's in scope, what's supporting, what's excluded |
 | `## Terminology Glossary` | 1 | Internal jargon mapped to plain definitions |
 | `## Entity Registry` | 1 (names) / 2 (details) | Business objects with attributes and descriptions |
+| `## State Models` | 1 | Valid statuses, types, and state transitions for entities |
 | `## Relationship Map` | 2 | How entities connect to each other |
 | `## Flow Catalog` | 2 | Named business processes with step-by-step info flow |
 | `## Business Rules` | 1 | Constraints, validations, edge cases |
@@ -314,4 +318,3 @@ Over time, the DOMAIN.md becomes the single source of truth for:
 - `references/seed-questions.md` — Questions to ask when bootstrapping a new domain
 - `references/entity-template.md` — Template for individual entity files (large projects)
 - `references/anti-patterns.md` — Common mistakes to avoid when building domain context
-
