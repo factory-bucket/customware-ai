@@ -29,6 +29,30 @@
 
 ---
 
+## Domain Boundaries
+<!-- TIER 1 — always loaded -->
+
+> What's in scope, what's supporting, and what's explicitly excluded.
+> This prevents the AI from overbuilding or making assumptions about adjacent systems.
+
+### Core operational scope
+- [Primary capability 1 — e.g., "Inventory control for individual SKUs"]
+- [Primary capability 2]
+- [Primary capability 3]
+
+### Supporting scope
+- [Supporting system or feature — e.g., "Seeded product catalog for dev/staging"]
+- [Supporting system or feature]
+
+### Explicitly out of scope
+- [What this system does NOT do — e.g., "Does not handle payment processing"]
+- [Adjacent system that exists but is not part of this domain]
+
+### Explicit domain notes
+- [Clarifications about source of truth — e.g., "The operational SKU registry is the source of truth, not the seeded product catalog"]
+
+---
+
 ## Terminology Glossary
 <!-- TIER 1 — always loaded -->
 
@@ -72,6 +96,27 @@
 **Lifecycle:**
 **Owner:**
 **Notes:**
+
+---
+
+## State Models
+<!-- TIER 1 — always loaded -->
+
+> Named enumerations and state machines for entities that have explicit statuses or lifecycle stages.
+> These are the valid values the system enforces — not suggestions.
+
+### [Entity or attribute name] statuses
+- `[status_1]`
+- `[status_2]`
+- `[status_3]`
+
+### [Entity or attribute name] types
+- `[type_1]`
+- `[type_2]`
+
+> For entities with sequential workflows, document the valid transitions:
+> `new` → `picking` → `packing` → `ready_to_ship` → `shipped`
+> Exception states: `on_hold` (requires note, can resume), `cancelled` (requires Management)
 
 ---
 
@@ -199,4 +244,3 @@
 | Date | Session Summary | Entities Added | Rules Added |
 |------|----------------|----------------|-------------|
 | [YYYY-MM-DD] | [Brief description of session] | [list] | [list] |
-
