@@ -4,7 +4,7 @@ license: MIT
 compatibility: Works with any AI coding assistant that supports the Agent Skills specification (e.g. Claude Code, Cursor, Windsurf, Copilot, and others). No system packages or network access required.
 metadata:
   author: ryan-price
-  version: "1.3"
+  version: "1.4"
 description: >
   Progressive Domain Crystallization (PDC) — a skill for building and maintaining a living
   domain knowledge base for any custom business application. Use this skill whenever the user
@@ -113,6 +113,7 @@ Domain knowledge files grow over time. A single DOMAIN.md that works well at 80 
 - `## State Models` — named enumerations and valid state transitions for entities with statuses or lifecycle stages. The AI must treat these as the only valid values.
 - `## Business Rules` — the hard rules table (BR-001, BR-002, etc.). These are ground truth the AI must always know.
 - `## User Roles` — the roles table
+- `## Stakeholder Map` — named people, their relationship to the system, their key concerns, and when to involve them. Critical for adoption and buy-in.
 - `## Open Questions` — current unresolved items
 - `## Detail Files` — index of Tier 2 files with one-line summaries (see file layout below)
 
@@ -202,6 +203,7 @@ The file uses these top-level sections, all in one file:
 | `## Business Rules` | 1 | Constraints, validations, edge cases |
 | `## Integration Points` | 2 | External systems, APIs, data sources |
 | `## User Roles` | 1 | Who uses the system and what they can do |
+| `## Stakeholder Map` | 1 | Named people, their relationship to the system, concerns, involvement timing |
 | `## Open Questions` | 1 | Unresolved ambiguities — reviewed and cleared over time |
 | `## Changelog` | 3 | What was learned and when |
 
@@ -232,7 +234,7 @@ your-project/
 ```
 
 The root DOMAIN.md in split mode contains:
-- Tier 1 sections in full (Project Overview, Glossary, Entity names table, Business Rules, User Roles, Open Questions)
+- Tier 1 sections in full (Project Overview, Domain Boundaries, Glossary, Entity names table, State Models, Business Rules, User Roles, Stakeholder Map, Open Questions)
 - A `## Detail Files` index pointing to each Tier 2 file with a one-line summary:
 
 ```markdown
