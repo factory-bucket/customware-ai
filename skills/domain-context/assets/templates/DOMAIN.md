@@ -208,6 +208,29 @@
 
 ---
 
+## Stakeholder Map
+<!-- TIER 1 — always loaded -->
+
+> People identified during discovery who interact with or are affected by the system.
+> This is not an org chart. It maps individuals to their relationship with the system
+> being built — what they do, what they care about, and when their input matters.
+>
+> Named people create accountability. Unnamed roles create gaps.
+> When a name is mentioned, capture it. When only a role is mentioned, add an Open Question.
+
+| Name | Role | Relationship to System | Key Concern | Involve When |
+|------|------|----------------------|-------------|--------------|
+| [name] | [title/function] | [sponsor / power user / downstream consumer / approval gate / beneficiary] | [what will make them resist or champion] | [phase or feature area] |
+
+> **Relationship types:**
+> - **Sponsor** — initiated the project, has budget authority, needs to see ROI
+> - **Power user** — uses the system daily, has deep process knowledge, will reject if it doesn't match their workflow
+> - **Downstream consumer** — receives output from the system (reports, documents, handoffs), cares about format and reliability
+> - **Approval gate** — must approve or review before something proceeds, cares about accuracy and control
+> - **Beneficiary** — benefits from the system but wasn't involved in designing it (e.g., new hires who need guided workflows)
+
+---
+
 ## Open Questions
 <!-- TIER 1 — always loaded -->
 
